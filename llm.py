@@ -2,7 +2,7 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 
-os.environ["GOOGLE_API_KEY"] = "AIzaSyC6yS20MFgeggekm94UkWSvRLqcKsnLEOo"
+os.environ["GOOGLE_API_KEY"] = "your-api-key"
 
 class GeminiLLM:
     def __init__(self, model_name="gemini-2.5-flash"):
