@@ -266,13 +266,3 @@ max_tokens = 1000
 4. Test thoroughly
 5. Submit a pull request
 
-
-## 🆘 Support
-
-- **Issues**: Report bugs or request features via GitHub Issues
-- **Documentation**: Check the code comments for detailed implementation notes
-- **API Keys**: Ensure your Google API key has Gemini AI access enabled
-
----
-
-**Built with ❤️ using Google Gemini AI, LangChain, and Streamlit**
