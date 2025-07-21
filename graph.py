@@ -1,36 +1,3 @@
-# # graph.py
-# from langgraph.graph import StateGraph
-# from typing import TypedDict, Dict
-# from tools.analyzer import analyze_resume_jd_tool
-# from tools.context_splitter import context_split_tool
-# from tools.question_generator import generate_questions_tool
-
-# # ✅ Define the state schema using TypedDict
-# class InterviewState(TypedDict):
-#     resume: str
-#     job_description: str
-#     resume_jd_analysis: Dict
-#     context_split: dict
-#     questions: dict
-    
-# def build_interview_graph():
-#     graph = StateGraph(InterviewState)
-
-#     # ✅ Add nodes
-#     graph.add_node("Start", lambda state: {"next": "Analyze"})
-#     graph.add_node("Analyze", analyze_resume_jd_tool)
-#     graph.add_node("ContextSplit", context_split_tool)  
-#     graph.add_node("GenerateQuestions", generate_questions_tool)
-#     # ✅ Add edges
-#     graph.add_edge("Start", "Analyze")
-#     graph.add_edge("Analyze", "ContextSplit")
-#     graph.add_edge("ContextSplit", "GenerateQuestions")
-#     # ✅ Set entry point    
-#     graph.set_entry_point("Start")
-#     graph.set_finish_point("GenerateQuestions")
-
-#     return graph.compile()
-
 
 # graph.py
 from langgraph.graph import StateGraph
@@ -41,19 +8,6 @@ from tools.context_splitter import context_split_tool
 from tools.question_generator import generate_questions_tool
 from tools.interview_conversational_agent import build_interview_conversational_graph
 
-# ✅ Combined State Schema
-# class InterviewState(TypedDict):
-#     resume: str
-#     job_description: str
-#     resume_jd_analysis: Dict
-#     context_split: dict
-#     questions: dict
-#     current_question: Optional[str]
-#     user_response: Optional[str]
-#     chat_history: List[Dict[str, str]]
-#     evaluation: List[Dict[str, str]]
-#     question_index: int
-#     question_type_order: List[str]
 
 class InterviewState(TypedDict):
     resume_pdf: str  # PDF file path

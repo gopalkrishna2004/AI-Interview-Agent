@@ -23,105 +23,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Force light theme using custom CSS
-st.markdown("""
-<style>
-    /* Force light theme */
-    .stApp {
-        background-color: white;
-        color: black;
-    }
-    
-    /* Ensure all containers use light theme */
-    .main .block-container {
-        background-color: white;
-        color: black;
-    }
-    
-    /* Sidebar light theme */
-    .css-1d391kg {
-        background-color: #f8f9fa;
-    }
-    
-    /* Input fields light theme */
-    .stTextInput > div > div > input,
-    .stTextArea > div > div > textarea,
-    .stSelectbox > div > div > select {
-        background-color: white;
-        color: black;
-        border: 1px solid #ddd;
-    }
-    
-    /* Button light theme */
-    .stButton > button {
-        background-color: #007bff;
-        color: white;
-        border: none;
-    }
-    
-    .stButton > button:hover {
-        background-color: #0056b3;
-    }
-    
-    /* Metrics light theme */
-    .metric-container {
-        background-color: white;
-        border: 1px solid #e0e0e0;
-    }
-    
-    /* Progress bar light theme */
-    .stProgress .st-bo {
-        background-color: #e9ecef;
-    }
-    
-    /* Expander light theme */
-    .streamlit-expanderHeader {
-        background-color: #f8f9fa;
-        color: black;
-    }
-    
-    /* File uploader light theme */
-    .stFileUploader {
-        background-color: white;
-    }
-    
-    /* Form light theme */
-    .stForm {
-        background-color: white;
-        border: 1px solid #e0e0e0;
-    }
-    
-    /* Alert boxes light theme */
-    .stAlert {
-        background-color: white;
-        color: black;
-    }
-    
-    /* Info boxes */
-    .stInfo {
-        background-color: #d1ecf1;
-        color: #0c5460;
-    }
-    
-    /* Success boxes */
-    .stSuccess {
-        background-color: #d4edda;
-        color: #155724;
-    }
-    
-    /* Warning boxes */
-    .stWarning {
-        background-color: #fff3cd;
-        color: #856404;
-    }
-    
-    /* Error boxes */
-    .stError {
-        background-color: #f8d7da;
-        color: #721c24;
-    }
-</style>
-""", unsafe_allow_html=True)
 
 # Custom CSS for better UI
 st.markdown("""
@@ -140,10 +41,12 @@ st.markdown("""
     .interviewer-message {
         background-color: #f0f2f6;
         border-left: 4px solid #1f77b4;
+        color: #908c8c;
     }
     .candidate-message {
         background-color: #e8f4fd;
         border-left: 4px solid #28a745;
+        color: #908c8c;
     }
     .analysis-card {
         background-color: #f8f9fa;
