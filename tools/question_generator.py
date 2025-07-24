@@ -6,7 +6,7 @@ class QuestionGenerator:
     def __init__(self, llm):
         self.llm = llm
 
-    def generate_technical_questions(self, technical_context: dict,  difficulty_level: str = "intermediate") -> List[Dict]:
+    def generate_technical_questions(self, technical_context: dict,  difficulty_level: str = "intermediate", jd_text: str = "") -> List[Dict]:
         """Generate technical interview questions based on specific skill area"""
         prompt = f"""
         You are a technical interviewer preparing for a candidate with the following background:
@@ -23,6 +23,11 @@ class QuestionGenerator:
         2. Include both theoretical and hands-on aspects
         3. Be suitable for {difficulty_level} candidates
         4. Leverage actual project experience 
+        
+        Generate 1 technical interview question based on the JD's main focused topics[such as AI, ML, DevOps, etc].
+        
+        Job Description:
+        {jd_text}
         
         Make sure the questions is with in 1-2 lines and inculde an ideal answer within a line to verify correctness.
 
@@ -129,12 +134,12 @@ def generate_questions_tool(state: dict) -> dict:
     if "context_split" not in state or "error" in state["context_split"]:
         state["error"] = "⚠️ Missing or invalid context_split. Cannot generate questions."
         return state
-
+    
+    jd_text = state["job_description"]
     context = state["context_split"]
     generator = QuestionGenerator(GeminiLLM())
 
-    # ✅ FIX: Wrap single questions in lists
-    technical_q = generator.generate_technical_questions(context["technical_context"], "Medium")
+    technical_q = generator.generate_technical_questions(context["technical_context"], "Medium", jd_text)
     behavioral_q = generator.generate_behavioral_questions(context["behavioral_context"])
     situational_q = generator.generate_situational_questions(context["situational_context"])
 
